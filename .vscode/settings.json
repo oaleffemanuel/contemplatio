@@ -3,5 +3,6 @@
     "cSpell.words": [
         "allprojects"
     ],
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "cmake.sourceDirectory": "/Users/aleffemanuel/workspace/contemplatio/linux/runner"
 }
