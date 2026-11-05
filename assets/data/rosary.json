@@ -1,0 +1,433 @@
+{
+  "sets": [
+    {
+      "id": "joyful",
+      "title": "Mistérios Gozosos",
+      "mysteries": [
+        {
+          "number": 1,
+          "name": "A Anunciação",
+          "image": "joyful_1_annunciation_1.jpg",
+          "meditations": [
+            "Jesus, que eu te diga “sim” nas coisas pequenas, com alegria.",
+            "Maria, faze meu coração disponível à vontade de Deus, sem condições.",
+            "Senhor, que eu trabalhe bem e em paz, porque contigo tudo tem sentido.",
+            "Nossa Mãe, ensina-me a começar e recomeçar: hoje, agora.",
+            "Jesus, cresce em mim: menos eu, mais Tu."
+          ],
+          "images": [
+            "joyful_1_annunciation_1.jpg",
+            "joyful_1_annunciation_opt2.jpg",
+            "joyful_1_annunciation_opt4.jpg",
+            "joyful_1_annunciation_opt1.jpg",
+            "joyful_1_annunciation_opt5.jpg",
+            "joyful_1_annunciation_2.jpg"
+          ]
+        },
+        {
+          "number": 2,
+          "name": "A Visitação",
+          "image": "joyful_2_visitation_1.jpg",
+          "meditations": [
+            "Maria, dá-me pressa para servir, sem desculpas.",
+            "Jesus, que eu leve tua presença aos outros com simplicidade.",
+            "Senhor, tira-me do centro: faz de mim instrumento.",
+            "Nossa Mãe, que eu tenha um coração grande e prático.",
+            "Jesus, que eu santifique o cotidiano com caridade concreta."
+          ],
+          "images": [
+            "joyful_2_visitation_2.jpg",
+            "joyful_2_visitation_opt2.jpg",
+            "joyful_2_visitation_opt5.jpg",
+            "joyful_2_visitation_1.jpg",
+            "joyful_2_visitation_opt1.jpg",
+            "joyful_2_visitation_opt3.jpg",
+            "joyful_2_visitation_opt4.jpg"
+          ]
+        },
+        {
+          "number": 3,
+          "name": "O Nascimento de Jesus",
+          "image": "joyful_3_nativity_1.jpg",
+          "meditations": [
+            "Jesus Menino, torna meu coração simples e verdadeiro.",
+            "Senhor, que eu te encontre no silêncio, sem barulho por dentro.",
+            "Maria, ajuda-me a amar a pobreza do coração: desapego e alegria.",
+            "Jesus, que minha casa seja lugar de paz e presença de Deus.",
+            "Meu Deus, que eu não me acostume com o milagre do teu amor."
+          ],
+          "images": [
+            "joyful_3_nativity_1.jpg",
+            "joyful_3_nativity_2.jpg",
+            "joyful_3_nativity_opt2.jpg",
+            "joyful_3_nativity_opt3.jpg",
+            "joyful_3_nativity_opt5.jpg",
+            "joyful_3_nativity_opt4.jpg"
+          ]
+        },
+        {
+          "number": 4,
+          "name": "A Apresentação de Jesus",
+          "image": "joyful_4_presentation_1.jpg",
+          "meditations": [
+            "Senhor, recebe minha vida: é tua, sem reservas.",
+            "Maria, ensina-me a obedecer com paz, mesmo sem entender tudo.",
+            "Jesus, que eu cumpra meu dever de cada dia com amor.",
+            "Nossa Mãe, faze-me fiel: firme nas pequenas coisas.",
+            "Senhor, dá-me pureza de intenção: só por ti, só contigo."
+          ],
+          "images": [
+            "joyful_4_presentation_1.jpg",
+            "joyful_4_presentation_opt1.jpg",
+            "joyful_4_presentation_opt3.jpg",
+            "joyful_4_presentation_opt4.jpg",
+            "joyful_4_presentation_opt5.jpg",
+            "joyful_4_presentation_opt2.jpg",
+            "joyful_4_presentation_2.jpg"
+          ]
+        },
+        {
+          "number": 5,
+          "name": "Jesus perdido e encontrado",
+          "image": "joyful_5_finding_1.jpg",
+          "meditations": [
+            "Jesus, que eu te busque de verdade, com perseverança.",
+            "Senhor, quando eu me distrair, traz-me de volta com ternura.",
+            "Maria, guia minha vida interior: oração simples e constante.",
+            "Jesus, que eu ame as coisas do Pai com alegria e ordem.",
+            "Senhor, que eu saiba “perder” tempo contigo: é o melhor investimento."
+          ],
+          "images": [
+            "joyful_5_finding_2.jpg",
+            "joyful_5_finding_opt4.jpg",
+            "joyful_5_finding_opt1.jpg",
+            "joyful_5_finding_opt2.jpg",
+            "joyful_5_finding_opt3.jpg",
+            "joyful_5_finding_1.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luminous",
+      "title": "Mistérios Luminosos",
+      "mysteries": [
+        {
+          "number": 1,
+          "name": "O Batismo de Jesus",
+          "image": "luminous_1_baptism_1.jpg",
+          "meditations": [
+            "Pai, lembra-me quem eu sou: teu filho amado.",
+            "Jesus, purifica minhas intenções e meu olhar.",
+            "Espírito Santo, guia minhas decisões: com luz e coragem.",
+            "Senhor, que eu viva com dignidade cristã no meu trabalho.",
+            "Nossa Mãe, leva-me a Jesus: sempre."
+          ],
+          "images": [
+            "luminous_1_baptism_opt1.jpg",
+            "luminous_1_baptism_opt3.jpg",
+            "luminous_1_baptism_opt4.jpg",
+            "luminous_1_baptism_2.jpg",
+            "luminous_1_baptism_opt5.jpg",
+            "luminous_1_baptism_1.jpg"
+          ]
+        },
+        {
+          "number": 2,
+          "name": "As Bodas de Caná",
+          "image": "luminous_2_cana_1.jpg",
+          "meditations": [
+            "Maria, apresenta minhas necessidades a Jesus, sem medo.",
+            "Senhor, transforma minha água em vinho: rotina em amor.",
+            "Jesus, eu confio: “fazei tudo o que Ele vos disser”.",
+            "Nossa Mãe, ensina-me a obedecer com alegria.",
+            "Senhor, que eu não reclame: que eu recomece."
+          ],
+          "images": [
+            "luminous_2_cana_1.jpg",
+            "luminous_2_cana_opt2.jpg",
+            "luminous_2_cana_2.jpg",
+            "luminous_2_cana_opt1.jpg",
+            "luminous_2_cana_opt4.jpg",
+            "luminous_2_cana_opt5.jpg",
+            "luminous_2_cana_opt3.jpg"
+          ]
+        },
+        {
+          "number": 3,
+          "name": "O Anúncio do Reino",
+          "image": "luminous_3_kingdom_1.jpg",
+          "meditations": [
+            "Jesus, que eu me converta hoje: sem adiar.",
+            "Senhor, faze-me simples: fé sem complicação.",
+            "Que eu leve teu Reino com alegria no ordinário.",
+            "Jesus, dá-me fome de santidade: de verdade.",
+            "Nossa Mãe, ajuda-me a ser luz no meu ambiente."
+          ],
+          "images": [
+            "luminous_3_kingdom_1.jpg",
+            "luminous_3_kingdom_opt1.jpg",
+            "luminous_3_kingdom_opt2.jpg",
+            "luminous_3_kingdom_opt3.jpg",
+            "luminous_3_kingdom_opt4.jpg",
+            "luminous_3_kingdom_2.jpg"
+          ]
+        },
+        {
+          "number": 4,
+          "name": "A Transfiguração",
+          "image": "luminous_4_transfiguration_1.jpg",
+          "meditations": [
+            "Jesus, deixa-me te olhar: e mudar por dentro.",
+            "Senhor, fortalece minha fé quando vier a cruz.",
+            "Que eu escute tua voz e obedeça, com paz.",
+            "Cristo, transfigura meu trabalho: que seja oração.",
+            "Maria, sustenta minha fidelidade: hoje e sempre."
+          ],
+          "images": [
+            "luminous_4_transfiguration_opt3.jpg",
+            "luminous_4_transfiguration_opt5.jpg",
+            "luminous_4_transfiguration_1.jpg",
+            "luminous_4_transfiguration_opt1.jpg",
+            "luminous_4_transfiguration_opt2.jpg",
+            "luminous_4_transfiguration_2.jpg"
+          ]
+        },
+        {
+          "number": 5,
+          "name": "A Instituição da Eucaristia",
+          "image": "luminous_5_eucharist_1.jpg",
+          "meditations": [
+            "Jesus Eucarístico, fica comigo.",
+            "Senhor, aumenta minha fome por ti.",
+            "Que eu te receba com alma limpa e coração ardente.",
+            "Jesus, ensina-me a amar como tu amas: até o fim.",
+            "Nossa Mãe, leva-me à Missa: com desejo e gratidão."
+          ],
+          "images": [
+            "luminous_5_eucharist_1.jpg",
+            "luminous_5_eucharist_opt1.jpg",
+            "luminous_5_eucharist_opt5.jpg",
+            "luminous_5_eucharist_opt4.jpg",
+            "luminous_5_eucharist_2.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sorrowful",
+      "title": "Mistérios Dolorosos",
+      "mysteries": [
+        {
+          "number": 1,
+          "name": "A Agonia de Jesus no Horto",
+          "image": "sorrowful_1_agony_1.jpg",
+          "meditations": [
+            "Jesus, que eu aceite a vontade do Pai com paz.",
+            "Senhor, nas minhas angústias, faze-me firme.",
+            "Que eu vigie e reze, sem fugir.",
+            "Jesus, dá-me fortaleza para dizer “faça-se”.",
+            "Nossa Mãe, segura minha mão quando eu tremer."
+          ],
+          "images": [
+            "sorrowful_1_agony_2.jpg",
+            "sorrowful_1_agony_opt3.jpg",
+            "sorrowful_1_agony_opt4.jpg",
+            "sorrowful_1_agony_1.jpg",
+            "sorrowful_1_agony_opt1.jpg",
+            "sorrowful_1_agony_opt5.jpg",
+            "sorrowful_1_agony_opt2.jpg"
+          ]
+        },
+        {
+          "number": 2,
+          "name": "A Flagelação",
+          "image": "sorrowful_2_scourging_1.jpg",
+          "meditations": [
+            "Senhor, cura-me por tuas chagas.",
+            "Jesus, dá-me domínio: coração limpo e forte.",
+            "Que eu seja penitente alegre: sem drama.",
+            "Senhor, que eu vença a preguiça com amor.",
+            "Nossa Mãe, ajuda-me a recomeçar com humildade."
+          ],
+          "images": [
+            "sorrowful_2_scourging_opt2.jpg",
+            "sorrowful_2_scourging_opt3.jpg",
+            "sorrowful_2_scourging_2.jpg",
+            "sorrowful_2_scourging_1.jpg",
+            "sorrowful_2_scourging_opt4.jpg",
+            "sorrowful_2_scourging_opt1.jpg",
+            "sorrowful_2_scourging_opt5.jpg"
+          ]
+        },
+        {
+          "number": 3,
+          "name": "A Coroação de Espinhos",
+          "image": "sorrowful_3_thorns_1.jpg",
+          "meditations": [
+            "Jesus, Rei humilhado, reina em mim.",
+            "Senhor, ensina-me a calar e a amar.",
+            "Que eu não busque aplauso: só fidelidade.",
+            "Jesus, dá-me humildade e alegria.",
+            "Nossa Mãe, livra-me da vaidade que me rouba a paz."
+          ],
+          "images": [
+            "sorrowful_3_thorns_opt3.jpg",
+            "sorrowful_3_thorns_1.jpg",
+            "sorrowful_3_thorns_opt1.jpg",
+            "sorrowful_3_thorns_opt2.jpg",
+            "sorrowful_3_thorns_opt4.jpg",
+            "sorrowful_3_thorns_opt5.jpg",
+            "sorrowful_3_thorns_2.jpg"
+          ]
+        },
+        {
+          "number": 4,
+          "name": "Jesus carrega a Cruz",
+          "image": "sorrowful_4_cross_1.jpg",
+          "meditations": [
+            "Senhor, ajuda-me a carregar minha cruz com amor.",
+            "Jesus, que eu não reclame: que eu ofereça.",
+            "Que eu seja constante: mesmo cansado.",
+            "Jesus, dá-me paciência com os outros e comigo.",
+            "Nossa Mãe, ensina-me a amar o caminho da cruz."
+          ],
+          "images": [
+            "sorrowful_4_cross_1.jpg",
+            "sorrowful_4_cross_opt5.jpg",
+            "sorrowful_4_cross_2.jpg",
+            "sorrowful_4_cross_opt3.jpg",
+            "sorrowful_4_cross_opt1.jpg",
+            "sorrowful_4_cross_opt2.jpg",
+            "sorrowful_4_cross_opt4.jpg"
+          ]
+        },
+        {
+          "number": 5,
+          "name": "A Crucifixão e Morte",
+          "image": "sorrowful_5_crucifixion_1.jpg",
+          "meditations": [
+            "Jesus crucificado, eu te adoro e te amo.",
+            "Senhor, perdoa-me: e ensina-me a perdoar.",
+            "Jesus, que eu te ame até o fim.",
+            "Que eu viva com gratidão: tu morreste por mim.",
+            "Nossa Mãe, coloca-me junto da Cruz, fiel e em paz."
+          ],
+          "images": [
+            "sorrowful_5_crucifixion_1.jpg",
+            "sorrowful_5_crucifixion_opt3.jpg",
+            "sorrowful_5_crucifixion_opt4.jpg",
+            "sorrowful_5_crucifixion_opt1.jpg",
+            "sorrowful_5_crucifixion_opt2.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glorious",
+      "title": "Mistérios Gloriosos",
+      "mysteries": [
+        {
+          "number": 1,
+          "name": "A Ressurreição",
+          "image": "glorious_1_resurrection_1.jpg",
+          "meditations": [
+            "Cristo ressuscitado, renova minha esperança.",
+            "Senhor, dá-me alegria verdadeira: a tua.",
+            "Jesus, faz-me recomeçar com coragem.",
+            "Que eu viva como ressuscitado: sem medo.",
+            "Nossa Mãe, ensina-me a sorrir por dentro: Deus venceu."
+          ],
+          "images": [
+            "glorious_1_resurrection_1.jpg",
+            "glorious_1_resurrection_opt2.jpg",
+            "glorious_1_resurrection_2.jpg",
+            "glorious_1_resurrection_opt1.jpg",
+            "glorious_1_resurrection_opt5.jpg",
+            "glorious_1_resurrection_opt3.jpg",
+            "glorious_1_resurrection_opt4.jpg"
+          ]
+        },
+        {
+          "number": 2,
+          "name": "A Ascensão",
+          "image": "glorious_2_ascension_1.jpg",
+          "meditations": [
+            "Senhor, que eu tenha o Céu no horizonte.",
+            "Jesus, aumenta minha fé nas coisas invisíveis.",
+            "Que eu trabalhe bem aqui, pensando no alto.",
+            "Senhor, dá-me audácia para anunciar-te com a vida.",
+            "Nossa Mãe, guarda meu coração: firme, alegre, fiel."
+          ],
+          "images": [
+            "glorious_2_ascension_2.jpg",
+            "glorious_2_ascension_opt1.jpg",
+            "glorious_2_ascension_opt4.jpg",
+            "glorious_2_ascension_opt5.jpg",
+            "glorious_2_ascension_1.jpg",
+            "glorious_2_ascension_opt2.jpg",
+            "glorious_2_ascension_opt3.jpg"
+          ]
+        },
+        {
+          "number": 3,
+          "name": "Pentecostes",
+          "image": "glorious_3_pentecost_1.jpg",
+          "meditations": [
+            "Espírito Santo, vem: acende-me por dentro.",
+            "Senhor, dá-me coragem para ser testemunha.",
+            "Que eu fale de ti com naturalidade e alegria.",
+            "Espírito Santo, ordena minha mente e meu coração.",
+            "Nossa Mãe, faz de mim instrumento dócil de Deus."
+          ],
+          "images": [
+            "glorious_3_pentecost_1.jpg",
+            "glorious_3_pentecost_opt4.jpg",
+            "glorious_3_pentecost_opt5.jpg",
+            "glorious_3_pentecost_2.jpg",
+            "glorious_3_pentecost_opt1.jpg",
+            "glorious_3_pentecost_opt3.jpg"
+          ]
+        },
+        {
+          "number": 4,
+          "name": "A Assunção de Maria",
+          "image": "glorious_4_assumption_1.jpg",
+          "meditations": [
+            "Maria, leva-me para perto de Jesus.",
+            "Nossa Mãe, guarda meu coração puro e alegre.",
+            "Que eu viva com dignidade de filho de Deus.",
+            "Maria, ensina-me a fidelidade silenciosa.",
+            "Senhor, dá-me amor a ti: sem medidas."
+          ],
+          "images": [
+            "glorious_4_assumption_2.jpg",
+            "glorious_4_assumption_1.jpg",
+            "glorious_4_assumption_opt1.jpg",
+            "glorious_4_assumption_opt4.jpg",
+            "glorious_4_assumption_opt5.jpg"
+          ]
+        },
+        {
+          "number": 5,
+          "name": "A Coroação de Maria",
+          "image": "glorious_5_coronation_1.jpg",
+          "meditations": [
+            "Maria, Rainha, eu me consagro a ti.",
+            "Nossa Mãe, governa meu coração: para Jesus.",
+            "Que eu seja fiel nas pequenas coisas, com amor.",
+            "Maria, dá-me pureza de intenção e alegria.",
+            "Senhor, leva-me ao Céu: pela mão de Maria."
+          ],
+          "images": [
+            "glorious_5_coronation_1.jpg",
+            "glorious_5_coronation_opt3.jpg",
+            "glorious_5_coronation_opt1.jpg",
+            "glorious_5_coronation_opt2.jpg",
+            "glorious_5_coronation_2.jpg"
+          ]
+        }
+      ]
+    }
+  ]
+}

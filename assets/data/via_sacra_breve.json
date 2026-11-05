@@ -1,0 +1,163 @@
+{
+  "id": "breve",
+  "title": "Via Sacra breve",
+  "author": "Jaculatórias para cada estação",
+  "order": 40,
+  "kind": "jaculatorias",
+  "stations": [
+    {
+      "number": 1,
+      "title": "Jesus é condenado à morte",
+      "image": "viacrucis_01.jpg",
+      "paragraphs": [
+        "Jesus, aceito as incompreensões por amor a Ti.",
+        "Senhor, livra-me do julgamento apressado.",
+        "Que eu prefira a Tua vontade à aprovação dos outros.",
+        "Nossa Mãe, ensina-me o silêncio que ama."
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Jesus carrega a cruz",
+      "image": "viacrucis_02.jpg",
+      "paragraphs": [
+        "Senhor, ajuda-me a abraçar minha cruz de hoje.",
+        "Jesus, que eu não reclame, mas ofereça.",
+        "Dá-me constância nas dificuldades.",
+        "Que minha cruz seja caminho de união Contigo."
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Jesus cai pela primeira vez",
+      "image": "viacrucis_03.jpg",
+      "paragraphs": [
+        "Jesus, dá-me humildade para aceitar minha fraqueza.",
+        "Senhor, levanta-me quando eu falhar.",
+        "Que eu não desanime, mas recomece.",
+        "Nossa Mãe, segura minha mão no cansaço."
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Jesus encontra sua Mãe",
+      "image": "viacrucis_04.jpg",
+      "paragraphs": [
+        "Maria, consola-me nas minhas dores.",
+        "Jesus, que eu te encontre no rosto dos que sofrem.",
+        "Nossa Mãe, ensina-me a fidelidade na dor.",
+        "Senhor, que eu seja presença que alivia."
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Simão Cireneu ajuda Jesus",
+      "image": "viacrucis_05.jpg",
+      "paragraphs": [
+        "Jesus, faze-me pronto para ajudar o próximo.",
+        "Senhor, que eu sirva com alegria e sem queixas.",
+        "Que eu reconheça Tua presença em quem precisa.",
+        "Nossa Mãe, dilata meu coração para a caridade."
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Verônica enxuga o rosto de Jesus",
+      "image": "viacrucis_06.jpg",
+      "paragraphs": [
+        "Jesus, imprime Teu rosto em minha alma.",
+        "Senhor, dá-me coragem para ser fiel diante de todos.",
+        "Que eu tenha gestos de pureza e consolo.",
+        "Nossa Mãe, guarda meu olhar para as coisas do Alto."
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Jesus cai pela segunda vez",
+      "image": "viacrucis_07.jpg",
+      "paragraphs": [
+        "Jesus, perdoa minha reincidência nas faltas.",
+        "Senhor, dá-me força para perseverar.",
+        "Que eu não confie em mim, mas na Tua graça.",
+        "Nossa Mãe, ajuda-me a levantar rápido."
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Jesus consola as mulheres",
+      "image": "viacrucis_08.jpg",
+      "paragraphs": [
+        "Jesus, dá-me um coração sensível à dor alheia.",
+        "Senhor, que eu chores por meus pecados, não por dramas.",
+        "Que eu tenha palavras de esperança.",
+        "Nossa Mãe, ensina-me a consolar com verdade."
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Jesus cai pela terceira vez",
+      "image": "viacrucis_09.jpg",
+      "paragraphs": [
+        "Jesus, pela Tua queda extrema, dá-me fortaleza final.",
+        "Senhor, que eu nunca desista da santidade.",
+        "Que eu me abandone à Tua misericórdia.",
+        "Nossa Mãe, sê minha força na última hora."
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Jesus é despojado de suas vestes",
+      "image": "viacrucis_10.jpg",
+      "paragraphs": [
+        "Jesus, desapega meu coração dos bens da terra.",
+        "Senhor, dá-me pureza e simplicidade.",
+        "Que eu nada retenha para mim, tudo para Ti.",
+        "Nossa Mãe, reveste-me com a graça de Deus."
+      ]
+    },
+    {
+      "number": 11,
+      "title": "Jesus é pregado na cruz",
+      "image": "viacrucis_11.jpg",
+      "paragraphs": [
+        "Jesus, prega meu coração ao Teu na cruz.",
+        "Senhor, aceito as dores por amor a Ti.",
+        "Que eu não fira os outros com minhas palavras.",
+        "Nossa Mãe, ensina-me o perdão total."
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Jesus morre na cruz",
+      "image": "viacrucis_12.jpg",
+      "paragraphs": [
+        "Jesus, morro para o mundo, vivo para Ti.",
+        "Senhor, nas Tuas mãos entrego meu espírito.",
+        "Tudo está consumado: amaste-me até o fim.",
+        "Nossa Mãe, coloca-me junto da Tua dor fiel."
+      ]
+    },
+    {
+      "number": 13,
+      "title": "Jesus é descido da cruz",
+      "image": "viacrucis_13.jpg",
+      "paragraphs": [
+        "Maria, acolhe-me em Teu colo de Mãe.",
+        "Jesus, que eu Te receba com amor na Eucaristia.",
+        "Nossa Mãe, ensina-me a piedade sincera.",
+        "Senhor, prepara meu coração para ser Teu sepulcro."
+      ]
+    },
+    {
+      "number": 14,
+      "title": "Jesus é sepultado",
+      "image": "viacrucis_14.jpg",
+      "paragraphs": [
+        "Jesus, que eu aguarde com esperança a Ressurreição.",
+        "Senhor, que minha vida interior seja Teu repouso.",
+        "Tira-me do sepulcro do pecado e da rotina.",
+        "Nossa Mãe, guarda minha fé no silêncio."
+      ]
+    }
+  ]
+}
