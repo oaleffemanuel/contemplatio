@@ -2,7 +2,7 @@ name: contemplatio
 description: "Lumen — contemplação dos mistérios do Rosário e Via Sacra."
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: '>=3.7.0 <4.0.0'
@@ -17,6 +17,8 @@ dependencies:
 
 dev_dependencies:
   flutter_test:
+    sdk: flutter
+  integration_test:
     sdk: flutter
   # Gerador automático de ícones para iOS e Android
   flutter_launcher_icons: ^0.13.1

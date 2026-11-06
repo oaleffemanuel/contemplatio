@@ -1,14 +1,18 @@
+import 'package:flutter/foundation.dart'
+    show defaultTargetPlatform, TargetPlatform;
 import 'package:flutter/material.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
 import '../app/theme.dart';
+import '../widgets/readable_width.dart';
 import '../data/content_repository.dart';
 import '../data/models.dart';
 import 'guide_screen.dart';
 import 'onboarding_screen.dart';
 import 'rosary_screen.dart' show RosaryScreen;
 import '../data/lumen_settings.dart';
+import '../widgets/lumen_button.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({
@@ -137,6 +141,27 @@ class SettingsScreen extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(height: 16),
+          // Donations go through Pix on WhatsApp. App Store guideline 3.1.1 only
+          // allows tips via in-app purchase, so the appeal is Android-only; iOS
+          // keeps the plain contact row.
+          if (defaultTargetPlatform == TargetPlatform.android) ...[
+            const _SupportCard(),
+            const SizedBox(height: 16),
+          ],
+          _Group(
+            children: [
+              _Row(
+                icon: Icons.chat_bubble_outline_rounded,
+                label: 'Falar no WhatsApp',
+                onTap:
+                    () => openWhatsApp(
+                      context,
+                      'Olá! Escrevo sobre o app Lumen.',
+                    ),
+              ),
+            ],
+          ),
           const SizedBox(height: 28),
           Center(
             child: Text(
@@ -151,6 +176,65 @@ class SettingsScreen extends StatelessWidget {
 
   static void _push(BuildContext context, Widget page) =>
       Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => page));
+}
+
+/// Developer's WhatsApp (+55 31 97596-5032), shared with Biblia Traditio.
+const _whatsAppPhone = '5531975965032';
+
+Future<void> openWhatsApp(BuildContext context, String message) async {
+  final messenger = ScaffoldMessenger.maybeOf(context);
+  final uri = Uri.parse(
+    'https://wa.me/$_whatsAppPhone?text=${Uri.encodeComponent(message)}',
+  );
+  var ok = false;
+  try {
+    ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
+  } catch (_) {}
+  if (!ok) {
+    messenger?.showSnackBar(
+      const SnackBar(content: Text('Não foi possível abrir o WhatsApp.')),
+    );
+  }
+}
+
+class _SupportCard extends StatelessWidget {
+  const _SupportCard();
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: LumenColors.surface,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(18, 18, 18, 18),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('APOIE O LUMEN', style: LumenType.section),
+            const SizedBox(height: 10),
+            Text(
+              'O Lumen é gratuito e sem anúncios. Manter o app publicado nas '
+              'lojas tem um custo todo ano. Se ele te ajuda a rezar, qualquer '
+              'valor ajuda.',
+              style: LumenType.body(1.0, color: LumenColors.ivory),
+            ),
+            const SizedBox(height: 16),
+            LumenButton(
+              label: 'Doar via Pix',
+              icon: Icons.favorite_rounded,
+              expand: true,
+              onPressed:
+                  () => openWhatsApp(
+                    context,
+                    'Olá! Quero ajudar a manter o Lumen publicado. '
+                    'Pode me mandar a chave Pix?',
+                  ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 class _Group extends StatelessWidget {
@@ -226,81 +310,83 @@ class CreditsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Créditos')),
-      body: FutureBuilder(
-        future: _load(),
-        builder: (context, snapshot) {
-          final data = snapshot.data;
-          if (data == null) return const SizedBox.expand();
-          final (anthologies, collections, images) = data;
-          return ListView(
-            padding: const EdgeInsets.fromLTRB(20, 8, 20, 40),
-            children: [
-              for (final a in anthologies) ...[
-                Text('COLETÂNEA', style: LumenType.section),
-                const SizedBox(height: 6),
-                Text(a.title, style: LumenType.title(26)),
-                Text(
-                  'Organização do ${a.organizer}. As Vias Sacras de Santo '
-                  'Afonso, Newman, Madre Teresa, Ernestina de Champourcin e '
-                  'Frei Asinello vêm desta coletânea.',
-                  style: LumenType.caption.copyWith(fontSize: 13.5),
-                ),
-                if (a.instagram != null)
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: TextButton.icon(
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                        foregroundColor: LumenColors.accent,
-                      ),
-                      onPressed:
-                          () => launchUrl(
-                            Uri.parse(a.instagram!),
-                            mode: LaunchMode.externalApplication,
-                          ),
-                      icon: const Icon(Icons.open_in_new_rounded, size: 16),
-                      label: const Text('@pe_albertoshintani no Instagram'),
-                    ),
-                  ),
-                const Divider(height: 32),
-              ],
-              Text('TEXTOS', style: LumenType.section),
-              const SizedBox(height: 8),
-              for (final c in collections.where((c) => c.group == null))
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 12),
-                  child: Text(
-                    '${c.title} — ${c.author}'
-                    '${c.source != null ? '\n${c.source}' : ''}',
+      body: ReadableWidth(
+        child: FutureBuilder(
+          future: _load(),
+          builder: (context, snapshot) {
+            final data = snapshot.data;
+            if (data == null) return const SizedBox.expand();
+            final (anthologies, collections, images) = data;
+            return ListView(
+              padding: const EdgeInsets.fromLTRB(20, 8, 20, 40),
+              children: [
+                for (final a in anthologies) ...[
+                  Text('COLETÂNEA', style: LumenType.section),
+                  const SizedBox(height: 6),
+                  Text(a.title, style: LumenType.title(26)),
+                  Text(
+                    'Organização do ${a.organizer}. As Vias Sacras de Santo '
+                    'Afonso, Newman, Madre Teresa, Ernestina de Champourcin e '
+                    'Frei Asinello vêm desta coletânea.',
                     style: LumenType.caption.copyWith(fontSize: 13.5),
                   ),
-                ),
-              const Divider(height: 32),
-              Text('PINTURAS', style: LumenType.section),
-              const SizedBox(height: 8),
-              if (images.isEmpty)
-                Text('Em breve.', style: LumenType.caption)
-              else
-                for (final c in images)
+                  if (a.instagram != null)
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: TextButton.icon(
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          foregroundColor: LumenColors.accent,
+                        ),
+                        onPressed:
+                            () => launchUrl(
+                              Uri.parse(a.instagram!),
+                              mode: LaunchMode.externalApplication,
+                            ),
+                        icon: const Icon(Icons.open_in_new_rounded, size: 16),
+                        label: const Text('@pe_albertoshintani no Instagram'),
+                      ),
+                    ),
+                  const Divider(height: 32),
+                ],
+                Text('TEXTOS', style: LumenType.section),
+                const SizedBox(height: 8),
+                for (final c in collections.where((c) => c.group == null))
                   Padding(
                     padding: const EdgeInsets.only(bottom: 12),
                     child: Text(
-                      '${c.artist} — ${c.title}'
-                      '${c.year.isEmpty ? '' : ' (${c.year})'}\n'
-                      '${c.location.isEmpty ? '' : '${c.location} · '}${c.license}',
-                      style: LumenType.caption.copyWith(fontSize: 13),
+                      '${c.title} — ${c.author}'
+                      '${c.source != null ? '\n${c.source}' : ''}',
+                      style: LumenType.caption.copyWith(fontSize: 13.5),
                     ),
                   ),
-              const Divider(height: 32),
-              Text('TIPOGRAFIA', style: LumenType.section),
-              const SizedBox(height: 8),
-              Text(
-                'EB Garamond e Inter — SIL Open Font License. Ícones: Fluent UI (MIT).',
-                style: LumenType.caption.copyWith(fontSize: 13.5),
-              ),
-            ],
-          );
-        },
+                const Divider(height: 32),
+                Text('PINTURAS', style: LumenType.section),
+                const SizedBox(height: 8),
+                if (images.isEmpty)
+                  Text('Em breve.', style: LumenType.caption)
+                else
+                  for (final c in images)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 12),
+                      child: Text(
+                        '${c.artist} — ${c.title}'
+                        '${c.year.isEmpty ? '' : ' (${c.year})'}\n'
+                        '${c.location.isEmpty ? '' : '${c.location} · '}${c.license}',
+                        style: LumenType.caption.copyWith(fontSize: 13),
+                      ),
+                    ),
+                const Divider(height: 32),
+                Text('TIPOGRAFIA', style: LumenType.section),
+                const SizedBox(height: 8),
+                Text(
+                  'EB Garamond e Inter — SIL Open Font License. Ícones: Fluent UI (MIT).',
+                  style: LumenType.caption.copyWith(fontSize: 13.5),
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

@@ -3,6 +3,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../app/theme.dart';
+import '../widgets/readable_width.dart';
 import '../data/content_repository.dart';
 import '../data/lumen_settings.dart';
 import '../data/models.dart';
@@ -31,86 +32,90 @@ class GuideScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(backgroundColor: Colors.transparent),
-      body: FutureBuilder<Article>(
-        future: repository.contemplationGuide(),
-        builder: (context, snapshot) {
-          final guide = snapshot.data;
-          if (guide == null) return const SizedBox.expand();
-          return CustomScrollView(
-            slivers: [
-              SliverToBoxAdapter(
-                child: SizedBox(
-                  height: height * 0.52,
-                  child: Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      const SacredImage(
-                        file: 'luminous_4_transfiguration_1.jpg',
-                        alignment: Alignment(0, -0.6),
-                        drift: true,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(22, 0, 22, 22),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'GUIA',
-                              style: LumenType.eyebrow(LumenColors.onHeroMuted),
-                            ),
-                            const SizedBox(height: 6),
-                            Text(
-                              guide.title,
-                              style: LumenType.title(
-                                38,
-                                color: LumenColors.onImage,
-                              ),
-                            ),
-                            const SizedBox(height: 6),
-                            Text(
-                              guide.author,
-                              style: LumenType.caption.copyWith(
-                                color: LumenColors.onHeroMuted,
-                              ),
-                            ),
-                          ],
+      body: ReadableWidth(
+        child: FutureBuilder<Article>(
+          future: repository.contemplationGuide(),
+          builder: (context, snapshot) {
+            final guide = snapshot.data;
+            if (guide == null) return const SizedBox.expand();
+            return CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: SizedBox(
+                    height: height * 0.52,
+                    child: Stack(
+                      fit: StackFit.expand,
+                      children: [
+                        const SacredImage(
+                          file: 'luminous_4_transfiguration_1.jpg',
+                          alignment: Alignment(0, -0.6),
+                          drift: true,
                         ),
-                      ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(22, 0, 22, 22),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'GUIA',
+                                style: LumenType.eyebrow(
+                                  LumenColors.onHeroMuted,
+                                ),
+                              ),
+                              const SizedBox(height: 6),
+                              Text(
+                                guide.title,
+                                style: LumenType.title(
+                                  38,
+                                  color: LumenColors.onImage,
+                                ),
+                              ),
+                              const SizedBox(height: 6),
+                              Text(
+                                guide.author,
+                                style: LumenType.caption.copyWith(
+                                  color: LumenColors.onHeroMuted,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SliverPadding(
+                  padding: EdgeInsets.fromLTRB(
+                    22,
+                    8,
+                    22,
+                    MediaQuery.paddingOf(context).bottom + 32,
+                  ),
+                  sliver: SliverList.list(
+                    children: [
+                      for (final p in guide.paragraphs) _Paragraph(p, scale),
+                      if (guide.sourceUrl != null) ...[
+                        const SizedBox(height: 12),
+                        LumenButton(
+                          label: 'Ler a carta completa',
+                          icon: FluentIcons.open_24_regular,
+                          style: LumenButtonStyle.secondary,
+                          expand: true,
+                          onPressed:
+                              () => launchUrl(
+                                Uri.parse(guide.sourceUrl!),
+                                mode: LaunchMode.externalApplication,
+                              ),
+                        ),
+                      ],
                     ],
                   ),
                 ),
-              ),
-              SliverPadding(
-                padding: EdgeInsets.fromLTRB(
-                  22,
-                  8,
-                  22,
-                  MediaQuery.paddingOf(context).bottom + 32,
-                ),
-                sliver: SliverList.list(
-                  children: [
-                    for (final p in guide.paragraphs) _Paragraph(p, scale),
-                    if (guide.sourceUrl != null) ...[
-                      const SizedBox(height: 12),
-                      LumenButton(
-                        label: 'Ler a carta completa',
-                        icon: FluentIcons.open_24_regular,
-                        style: LumenButtonStyle.secondary,
-                        expand: true,
-                        onPressed:
-                            () => launchUrl(
-                              Uri.parse(guide.sourceUrl!),
-                              mode: LaunchMode.externalApplication,
-                            ),
-                      ),
-                    ],
-                  ],
-                ),
-              ),
-            ],
-          );
-        },
+              ],
+            );
+          },
+        ),
       ),
     );
   }

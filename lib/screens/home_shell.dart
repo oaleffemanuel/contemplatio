@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../widgets/readable_width.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 
 import '../data/content_repository.dart';
@@ -53,51 +55,58 @@ class _HomeShellState extends State<HomeShell> {
       body: IndexedStack(
         index: _tab,
         children: [
-          HomeScreen(
-            repository: widget.repository,
-            scrollController: _scrolls[0],
-            onOpenTab: (i) => setState(() => _tab = i),
-          ),
-          RosarySetsScreen(
-            repository: widget.repository,
-            scrollController: _scrolls[1],
-          ),
-          ViaSacraScreen(
-            repository: widget.repository,
-            scrollController: _scrolls[2],
-          ),
-          SettingsScreen(
-            repository: widget.repository,
-            scrollController: _scrolls[3],
-          ),
+          for (final page in <Widget>[
+            HomeScreen(
+              repository: widget.repository,
+              scrollController: _scrolls[0],
+              onOpenTab: (i) => setState(() => _tab = i),
+            ),
+            RosarySetsScreen(
+              repository: widget.repository,
+              scrollController: _scrolls[1],
+            ),
+            ViaSacraScreen(
+              repository: widget.repository,
+              scrollController: _scrolls[2],
+            ),
+            SettingsScreen(
+              repository: widget.repository,
+              scrollController: _scrolls[3],
+            ),
+          ])
+            ReadableWidth(child: page),
         ],
       ),
-      bottomNavigationBar: LiquidTabBar(
-        index: _tab,
-        onChanged: (i) => setState(() => _tab = i),
-        onReselect: _scrollToTop,
-        tabs: [
-          LiquidTab(
-            label: 'Início',
-            icon: _fi(FluentIcons.home_24_regular),
-            selectedIcon: _fi(FluentIcons.home_24_filled),
-          ),
-          LiquidTab(
-            label: 'Mistérios',
-            icon: (c) => RosaryIcon(color: c, size: 26),
-            selectedIcon: (c) => RosaryIcon(color: c, size: 26, filled: true),
-          ),
-          LiquidTab(
-            label: 'Via Sacra',
-            icon: (c) => CrossIcon(color: c, size: 26),
-            selectedIcon: (c) => CrossIcon(color: c, size: 26, filled: true),
-          ),
-          LiquidTab(
-            label: 'Ajustes',
-            icon: _fi(FluentIcons.settings_24_regular),
-            selectedIcon: _fi(FluentIcons.settings_24_filled),
-          ),
-        ],
+      bottomNavigationBar: ReadableWidth(
+        maxWidth: 560,
+        shrinkHeight: true,
+        child: LiquidTabBar(
+          index: _tab,
+          onChanged: (i) => setState(() => _tab = i),
+          onReselect: _scrollToTop,
+          tabs: [
+            LiquidTab(
+              label: 'Início',
+              icon: _fi(FluentIcons.home_24_regular),
+              selectedIcon: _fi(FluentIcons.home_24_filled),
+            ),
+            LiquidTab(
+              label: 'Mistérios',
+              icon: (c) => RosaryIcon(color: c, size: 26),
+              selectedIcon: (c) => RosaryIcon(color: c, size: 26, filled: true),
+            ),
+            LiquidTab(
+              label: 'Via Sacra',
+              icon: (c) => CrossIcon(color: c, size: 26),
+              selectedIcon: (c) => CrossIcon(color: c, size: 26, filled: true),
+            ),
+            LiquidTab(
+              label: 'Ajustes',
+              icon: _fi(FluentIcons.settings_24_regular),
+              selectedIcon: _fi(FluentIcons.settings_24_filled),
+            ),
+          ],
+        ),
       ),
     );
   }

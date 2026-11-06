@@ -4,6 +4,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../app/theme.dart';
+import '../widgets/readable_width.dart';
 import '../data/content_repository.dart';
 import '../data/lumen_settings.dart';
 import '../data/models.dart';
@@ -407,139 +408,141 @@ class CollectionScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(),
-      body: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: height * 0.5,
-              child: Stack(
-                fit: StackFit.expand,
-                children: [
-                  SacredImage(
-                    file: collection.stations.first.image,
-                    drift: true,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(22, 0, 22, 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          collection.title.toUpperCase(),
-                          style: LumenType.eyebrow(LumenColors.onHeroMuted),
-                        ),
-                        const SizedBox(height: 6),
-                        Text(
-                          collection.author,
-                          style: LumenType.title(
-                            40,
-                            color: LumenColors.onImage,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(20, 4, 20, 8),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: LumenButton(
-                      expand: true,
-                      icon: FluentIcons.play_24_filled,
-                      onPressed:
-                          () => _open(context, last > 0 ? last + offset : 0),
-                      label:
-                          last > 0
-                              ? 'Continuar · ${romanNumeral(last + 1)} estação'
-                              : (hasIntro
-                                  ? 'Começar pela oração inicial'
-                                  : 'Começar'),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          if (collection.source != null)
+      body: ReadableWidth(
+        child: CustomScrollView(
+          slivers: [
             SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(22, 4, 22, 4),
-                child: Text(collection.source!, style: LumenType.caption),
-              ),
-            ),
-          SliverPadding(
-            padding: const EdgeInsets.fromLTRB(16, 16, 16, 40),
-            sliver: SliverGrid.count(
-              crossAxisCount: 2,
-              mainAxisSpacing: 12,
-              crossAxisSpacing: 12,
-              childAspectRatio: 0.78,
-              children: [
-                for (final (i, s) in collection.stations.indexed)
-                  GestureDetector(
-                    onTap: () => _open(context, i + offset),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(18),
-                      child: Stack(
-                        fit: StackFit.expand,
+              child: SizedBox(
+                height: height * 0.5,
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    SacredImage(
+                      file: collection.stations.first.image,
+                      drift: true,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(22, 0, 22, 20),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SacredImage(file: s.image, thumbnail: true),
-                          Padding(
-                            padding: const EdgeInsets.all(12),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  romanNumeral(s.number),
-                                  style: LumenType.title(
-                                    26,
-                                    color: LumenColors.gold,
-                                  ),
-                                ),
-                                Text(
-                                  s.title,
-                                  maxLines: 3,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
-                                    fontFamily: LumenType.ui,
-                                    fontSize: 12.5,
-                                    height: 1.3,
-                                    fontWeight: FontWeight.w500,
-                                    color: LumenColors.onImage,
-                                  ),
-                                ),
-                              ],
+                          Text(
+                            collection.title.toUpperCase(),
+                            style: LumenType.eyebrow(LumenColors.onHeroMuted),
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            collection.author,
+                            style: LumenType.title(
+                              40,
+                              color: LumenColors.onImage,
                             ),
                           ),
-                          if (i == last && last > 0)
-                            Positioned(
-                              top: 10,
-                              right: 10,
-                              child: Container(
-                                width: 8,
-                                height: 8,
-                                decoration: BoxDecoration(
-                                  color: LumenColors.gold,
-                                  shape: BoxShape.circle,
-                                ),
-                              ),
-                            ),
                         ],
                       ),
                     ),
-                  ),
-              ],
+                  ],
+                ),
+              ),
             ),
-          ),
-        ],
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(20, 4, 20, 8),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: LumenButton(
+                        expand: true,
+                        icon: FluentIcons.play_24_filled,
+                        onPressed:
+                            () => _open(context, last > 0 ? last + offset : 0),
+                        label:
+                            last > 0
+                                ? 'Continuar · ${romanNumeral(last + 1)} estação'
+                                : (hasIntro
+                                    ? 'Começar pela oração inicial'
+                                    : 'Começar'),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            if (collection.source != null)
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(22, 4, 22, 4),
+                  child: Text(collection.source!, style: LumenType.caption),
+                ),
+              ),
+            SliverPadding(
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 40),
+              sliver: SliverGrid.count(
+                crossAxisCount: 2,
+                mainAxisSpacing: 12,
+                crossAxisSpacing: 12,
+                childAspectRatio: 0.78,
+                children: [
+                  for (final (i, s) in collection.stations.indexed)
+                    GestureDetector(
+                      onTap: () => _open(context, i + offset),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(18),
+                        child: Stack(
+                          fit: StackFit.expand,
+                          children: [
+                            SacredImage(file: s.image, thumbnail: true),
+                            Padding(
+                              padding: const EdgeInsets.all(12),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    romanNumeral(s.number),
+                                    style: LumenType.title(
+                                      26,
+                                      color: LumenColors.gold,
+                                    ),
+                                  ),
+                                  Text(
+                                    s.title,
+                                    maxLines: 3,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                      fontFamily: LumenType.ui,
+                                      fontSize: 12.5,
+                                      height: 1.3,
+                                      fontWeight: FontWeight.w500,
+                                      color: LumenColors.onImage,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            if (i == last && last > 0)
+                              Positioned(
+                                top: 10,
+                                right: 10,
+                                child: Container(
+                                  width: 8,
+                                  height: 8,
+                                  decoration: BoxDecoration(
+                                    color: LumenColors.gold,
+                                    shape: BoxShape.circle,
+                                  ),
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -846,42 +849,44 @@ class AnthologyReadingsScreen extends StatelessWidget {
     final articles = [anthology.preface, ...anthology.readings];
     return Scaffold(
       appBar: AppBar(title: Text(anthology.title)),
-      body: ListView.separated(
-        padding: const EdgeInsets.fromLTRB(20, 12, 20, 40),
-        itemCount: articles.length,
-        separatorBuilder: (_, _) => const Divider(height: 28),
-        itemBuilder: (context, i) {
-          final a = articles[i];
-          return InkWell(
-            onTap:
-                () => Navigator.of(context).push(
-                  MaterialPageRoute<void>(
-                    builder: (_) => ArticleScreen(article: a),
+      body: ReadableWidth(
+        child: ListView.separated(
+          padding: const EdgeInsets.fromLTRB(20, 12, 20, 40),
+          itemCount: articles.length,
+          separatorBuilder: (_, _) => const Divider(height: 28),
+          itemBuilder: (context, i) {
+            final a = articles[i];
+            return InkWell(
+              onTap:
+                  () => Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                      builder: (_) => ArticleScreen(article: a),
+                    ),
                   ),
-                ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    i == 0 ? 'PREFÁCIO' : 'LEITURA $i',
-                    style: LumenType.eyebrow(LumenColors.gold),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    a.title.replaceFirst('Prefácio: ', ''),
-                    style: LumenType.title(24),
-                  ),
-                  if (a.author.isNotEmpty) ...[
-                    const SizedBox(height: 2),
-                    Text(a.author, style: LumenType.caption),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 4),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      i == 0 ? 'PREFÁCIO' : 'LEITURA $i',
+                      style: LumenType.eyebrow(LumenColors.gold),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      a.title.replaceFirst('Prefácio: ', ''),
+                      style: LumenType.title(24),
+                    ),
+                    if (a.author.isNotEmpty) ...[
+                      const SizedBox(height: 2),
+                      Text(a.author, style: LumenType.caption),
+                    ],
                   ],
-                ],
+                ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
@@ -897,20 +902,22 @@ class ArticleScreen extends StatelessWidget {
     final scale = LumenScope.of(context).textScale;
     return Scaffold(
       appBar: AppBar(),
-      body: ListView(
-        padding: const EdgeInsets.fromLTRB(24, 4, 24, 48),
-        children: [
-          Text(
-            article.title.replaceFirst('Prefácio: ', ''),
-            style: LumenType.title(32),
-          ),
-          if (article.author.isNotEmpty) ...[
-            const SizedBox(height: 6),
-            Text(article.author, style: LumenType.caption),
+      body: ReadableWidth(
+        child: ListView(
+          padding: const EdgeInsets.fromLTRB(24, 4, 24, 48),
+          children: [
+            Text(
+              article.title.replaceFirst('Prefácio: ', ''),
+              style: LumenType.title(32),
+            ),
+            if (article.author.isNotEmpty) ...[
+              const SizedBox(height: 6),
+              Text(article.author, style: LumenType.caption),
+            ],
+            const SizedBox(height: 24),
+            PrayerText(paragraphs: article.paragraphs, scale: scale),
           ],
-          const SizedBox(height: 24),
-          PrayerText(paragraphs: article.paragraphs, scale: scale),
-        ],
+        ),
       ),
     );
   }
